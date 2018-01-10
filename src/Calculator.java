@@ -81,9 +81,11 @@ public class Calculator extends Application {
 	}
 
 	private void calculate() {
+		try {
+			
 		
-		int number1 = Integer.parseInt(firstNumberTxt.getText());
-		int number2 = Integer.parseInt(secondNumberTxt.getText());
+		double number1 = Double.parseDouble(firstNumberTxt.getText());
+		double number2 = Double.parseDouble(secondNumberTxt.getText());
 		double result=0.0;
 		
 		if (addButton.isSelected()) {
@@ -106,6 +108,9 @@ public class Calculator extends Application {
 				result = number1/number2;
 				resultTxt.setText(String.format("%.2f", result));
 			}
+			
+		}
+		} catch (NumberFormatException e) {
 			
 		}
 
